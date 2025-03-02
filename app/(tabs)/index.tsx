@@ -1,21 +1,20 @@
-import { Image, StyleSheet, Platform, View, Text, Button } from 'react-native';
+import { Image, StyleSheet, Platform, View, Text, Button } from 'react-native'
 
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+import { ThemedText } from '@/components/ThemedText'
+import { ThemedView } from '@/components/ThemedView'
 import { CameraView, useCameraPermissions, BarcodeScanningResult } from 'expo-camera'
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { useState, useRef } from 'react';
-import BarcodeOutline from '@/components/BarcodeOutline';
-import Grid from '@/components/Grid';
+import { SafeAreaView } from 'react-native-safe-area-context'
+import { useState, useRef } from 'react'
+import BarcodeOutline from '@/components/BarcodeOutline'
+import Grid from '@/components/Grid'
 
 export default function HomeScreen() {
-
-  const [barcode, setBarcode] = useState<BarcodeScanningResult | undefined>(undefined);
+  const [barcode, setBarcode] = useState<BarcodeScanningResult | undefined>(undefined)
   const onBarcodeScanned = (data: BarcodeScanningResult) => {
-    setBarcode(data);
+    setBarcode(data)
   }
 
-  const [permission, requestPermission] = useCameraPermissions();
+  const [permission, requestPermission] = useCameraPermissions()
 
   if (!permission) {
     return (
@@ -23,19 +22,18 @@ export default function HomeScreen() {
         <ThemedText>Requesting permission...</ThemedText>
       </SafeAreaView>
     )
-  } 
-  
+  }
+
   if (!permission.granted) {
     return (
       <SafeAreaView style={{ flex: 1 }}>
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }} >
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
           <ThemedText>Permission not granted</ThemedText>
-          <Button onPress={requestPermission} title="Grant permission" />
+          <Button onPress={requestPermission} title='Grant permission' />
         </View>
       </SafeAreaView>
     )
   }
-
 
   return (
     <View style={{ flex: 1 }}>
@@ -43,5 +41,5 @@ export default function HomeScreen() {
       {barcode && <BarcodeOutline barcodeEvent={barcode} />}
       <Grid />
     </View>
-  );
+  )
 }
