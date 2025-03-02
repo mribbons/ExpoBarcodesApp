@@ -1,13 +1,23 @@
 # Welcome to your Expo app 👋
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.pnpmjs.com/package/create-expo-app) and [`pnpm`](https://pnpm.io/).
 
 ## Get started
+
+0. Install pnpm
+
+   ```bash
+   npm install -g pnpm
+   ```
+
+   Or using alternate instructions [`here`](https://pnpm.io/installation)
+
+Tested with pnpm v9.15.4
 
 1. Install dependencies
 
    ```bash
-   npm install
+   pnpm install
    ```
 
 2. Start the app
@@ -30,7 +40,7 @@ You can start developing by editing the files inside the **app** directory. This
 When you're ready, run:
 
 ```bash
-npm run reset-project
+pnpm run reset-project
 ```
 
 This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
