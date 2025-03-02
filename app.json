@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "SimpleBarcodes",
-    "slug": "SimpleBarcodes",
+    "name": "ExpoBarcodes",
+    "slug": "ExpoBarcodes",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -15,7 +15,14 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.anonymous.ExpoBarcodes"
     },
     "web": {
       "bundler": "metro",
